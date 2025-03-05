@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{01F2E0F6-3894-421E-9C98-A0955EE23570}|CryptoCurrency.WebAPI\\CryptoCurrency.WebAPI.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.webapi\\controllers\\cryptocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01F2E0F6-3894-421E-9C98-A0955EE23570}|CryptoCurrency.WebAPI\\CryptoCurrency.WebAPI.csproj|solutionrelative:cryptocurrency.webapi\\controllers\\cryptocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA94260C-CDE3-44DE-AA68-C1EBD79AB2CE}|CryptoCurrency.DAL\\CryptoCurrency.DAL.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.dal\\seed\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA94260C-CDE3-44DE-AA68-C1EBD79AB2CE}|CryptoCurrency.DAL\\CryptoCurrency.DAL.csproj|solutionrelative:cryptocurrency.dal\\seed\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E1D0945-8A97-4B98-9B40-C72535A7E72B}|CryptoCurrency.Services\\CryptoCurrency.Services.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.services\\services\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E1D0945-8A97-4B98-9B40-C72535A7E72B}|CryptoCurrency.Services\\CryptoCurrency.Services.csproj|solutionrelative:cryptocurrency.services\\services\\cryptoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 507,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CryptoService.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Services\\Services\\CryptoService.cs",
+              "RelativeDocumentMoniker": "CryptoCurrency.Services\\Services\\CryptoService.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Services\\Services\\CryptoService.cs",
+              "RelativeToolTip": "CryptoCurrency.Services\\Services\\CryptoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T18:14:45.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CryptoController.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.WebAPI\\Controllers\\CryptoController.cs",
+              "RelativeDocumentMoniker": "CryptoCurrency.WebAPI\\Controllers\\CryptoController.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.WebAPI\\Controllers\\CryptoController.cs",
+              "RelativeToolTip": "CryptoCurrency.WebAPI\\Controllers\\CryptoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T18:14:42.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Seed.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.DAL\\Seed\\Seed.cs",
+              "RelativeDocumentMoniker": "CryptoCurrency.DAL\\Seed\\Seed.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.DAL\\Seed\\Seed.cs",
+              "RelativeToolTip": "CryptoCurrency.DAL\\Seed\\Seed.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwH8AAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T18:05:18.644Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

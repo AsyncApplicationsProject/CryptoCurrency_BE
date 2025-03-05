@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1AEt4be9cQt54DUzgIpvb2XgfOA+7WfPyzMSPInai78=",
+  "Source": "CryptoCurrency.WebAPI",
+  "BasePath": "_content/CryptoCurrency.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

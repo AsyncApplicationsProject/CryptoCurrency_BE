@@ -1,0 +1,6 @@
+@CryptoCurrency.WebAPI_HostAddress = http://localhost:5222
+
+GET {{CryptoCurrency.WebAPI_HostAddress}}/cryptocurrency/
+Accept: application/json
+
+###
