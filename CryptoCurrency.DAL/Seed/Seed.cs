@@ -75,9 +75,9 @@ namespace CryptoCurrency.DAL.Seed
             {
                 new AppUser
                 {
-                    UserName = "user1",
-                    FirstName = "User1",
-                    LastName = "User1",
+                    UserName = "MateuszJanik",
+                    FirstName = "Mateusz",
+                    LastName = "Janik",
                     Email = "user1@example.com",
                     PhoneNumber = GeneratePhoneNumber(),
                     Balance = GenerateBalance(),
@@ -85,9 +85,9 @@ namespace CryptoCurrency.DAL.Seed
                 },
                 new AppUser
                 {
-                    UserName = "user2",
-                    FirstName = "User2",
-                    LastName = "User2",
+                    UserName = "KamilCzudaj",
+                    FirstName = "Kamil",
+                    LastName = "Czudaj",
                     Email = "user2@example.com",
                     PhoneNumber = GeneratePhoneNumber(),
                     Balance = GenerateBalance(),
@@ -95,9 +95,9 @@ namespace CryptoCurrency.DAL.Seed
                 },
                 new AppUser
                 {
-                    UserName = "user3",
-                    FirstName = "User3",
-                    LastName = "User3",
+                    UserName = "ArturBula",
+                    FirstName = "Artur",
+                    LastName = "Buła",
                     Email = "user3@example.com",
                     PhoneNumber = GeneratePhoneNumber(),
                     Balance = GenerateBalance(),
@@ -166,7 +166,7 @@ namespace CryptoCurrency.DAL.Seed
             return wallet;
         }
 
-        private static decimal GenerateBalance()
+        public static decimal GenerateBalance()
         {
             return Math.Round((decimal)(random.NextDouble() * 10000), 2);
         }

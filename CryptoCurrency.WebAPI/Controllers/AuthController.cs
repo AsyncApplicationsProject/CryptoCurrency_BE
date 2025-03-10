@@ -24,9 +24,7 @@ namespace CryptoCurrency.WebAPI.Controllers
             var result = await _userService.RegisterUserAsync(model);
 
             if (result.Succeeded)
-            {
-                return CreatedAtAction(nameof(Register), new { userName = model.Email }, model);
-            }
+                return Created();
 
             return BadRequest(result.Errors.Select(e => e.Description));
         }

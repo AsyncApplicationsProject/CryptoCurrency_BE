@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CryptoCurrency.DAL.Seed;
 using CryptoCurrency.Model.DTO.Auth;
 using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
@@ -29,9 +30,10 @@ namespace CryptoCurrency.Services.Services
             if (!string.IsNullOrEmpty(model.Email))
                 user = await UserManager.FindByEmailAsync(model.Email);
 
-            // If user is not found or password is incorrect, throw an exception
-            if (user == null || !await UserManager.CheckPasswordAsync(user, model.Password))
-                throw new UnauthorizedAccessException("403");
+            if (user == null)
+                throw new UnauthorizedAccessException("Invalid email");
+            if (!await UserManager.CheckPasswordAsync(user, model.Password))
+                throw new UnauthorizedAccessException("Invalid password");
 
             var token = JwtService.GenerateJwt(user);
 
@@ -44,11 +46,8 @@ namespace CryptoCurrency.Services.Services
             if (existingUser != null)
                 return IdentityResult.Failed(new IdentityError { Description = "User already exists." });
 
-            var newUser = new AppUser
-            {
-                Email = model.Email,
-                SecurityStamp = Guid.NewGuid().ToString(),
-            };
+            AppUser newUser = Mapper.Map<AppUser>(model);
+            newUser.UserName = model.Email.Split('@')[0];
 
             var result = await UserManager.CreateAsync(newUser, model.Password);
             return result;
