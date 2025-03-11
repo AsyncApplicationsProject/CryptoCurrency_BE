@@ -21,12 +21,18 @@ namespace CryptoCurrency.WebAPI.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Register(RegistrationModel model)
         {
-            var result = await _userService.RegisterUserAsync(model);
+            try
+            {
+                var result = await _userService.RegisterUserAsync(model);
 
-            if (result.Succeeded)
-                return Created();
-
-            return BadRequest(result.Errors.Select(e => e.Description));
+                if (result.Succeeded)
+                    return Created();
+                return Conflict(new { message = "User with this credentials already exist" });
+            }
+            catch
+            {
+                return StatusCode(500, new { message = "An error occurred. Please try again later." });
+            }
         }
 
         [HttpPost("login")]
@@ -42,11 +48,11 @@ namespace CryptoCurrency.WebAPI.Controllers
             }
             catch (UnauthorizedAccessException)
             {
-                return Unauthorized(new { message = "Invalid username, email, or password" });
+                return Unauthorized(new { message = "Invalid credentials" });
             }
             catch
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred. Please try again later." });
+                return StatusCode(500, new { message = "An error occurred. Please try again later." });
             }
         }
     }

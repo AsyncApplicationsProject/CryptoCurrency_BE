@@ -44,10 +44,9 @@ namespace CryptoCurrency.Services.Services
         {
             var existingUser = await UserManager.FindByNameAsync(model.Email);
             if (existingUser != null)
-                return IdentityResult.Failed(new IdentityError { Description = "User already exists." });
+                return IdentityResult.Failed();
 
             AppUser newUser = Mapper.Map<AppUser>(model);
-            newUser.UserName = model.Email.Split('@')[0];
 
             var result = await UserManager.CreateAsync(newUser, model.Password);
             return result;

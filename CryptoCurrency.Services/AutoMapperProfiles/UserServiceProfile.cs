@@ -10,6 +10,7 @@ namespace CryptoCurrency.Services.AutoMapperProfiles
         public UserServiceProfile() 
         {
             CreateMap<RegistrationModel, AppUser>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Email))
                 .ForMember(dest => dest.Balance, opt => opt.MapFrom(src => Seed.GenerateBalance()))
                 .ForMember(dest => dest.Wallet, opt => opt.MapFrom(src => new List<UserCrypto>()))
                 .ForMember(dest => dest.SecurityStamp, opt => opt.MapFrom(src => Guid.NewGuid().ToString()))
