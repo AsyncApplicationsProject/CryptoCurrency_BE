@@ -80,5 +80,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CryptoCurrency.WebAPI.Controllers.UserController",
+    "Method": "GetUserData",
+    "RelativePath": "api/user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

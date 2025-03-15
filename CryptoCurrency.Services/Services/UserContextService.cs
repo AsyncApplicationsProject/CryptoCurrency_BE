@@ -16,34 +16,34 @@ namespace CryptoCurrency.Services.Services
             _userManager = userManager;
         }
 
-        public string? GetUserName()
+        public string? GetUserId()
         {
             return _httpContextAccessor.HttpContext?.User?.Identity?.Name;
         }
 
-        public async Task<AppUser?> GetAppUser(string? email, string? userName)
-        {
-            if (!string.IsNullOrWhiteSpace(email))
-            {
-                return await _userManager.FindByEmailAsync(email);
-            }
-            else if (!string.IsNullOrWhiteSpace(userName))
-            {
-                return await _userManager.FindByNameAsync(userName);
-            }
-            return null;
-        }
+        //public async Task<AppUser?> GetAppUser(string? email, string? userName)
+        //{
+        //    if (!string.IsNullOrWhiteSpace(email))
+        //    {
+        //        return await _userManager.FindByEmailAsync(email);
+        //    }
+        //    else if (!string.IsNullOrWhiteSpace(userName))
+        //    {
+        //        return await _userManager.FindByNameAsync(userName);
+        //    }
+        //    return null;
+        //}
 
-        public async Task<AppUser> GetAppUser()
-        {
-            var userName = GetUserName();
-            if (userName == null)
-                throw new UnauthorizedAccessException("The user is not authenticated.");
+        //public async Task<AppUser> GetAppUser()
+        //{
+        //    var userId = GetUserId();
+        //    if (userId == null)
+        //        throw new UnauthorizedAccessException("The user is not authenticated.");
 
-            var user = await _userManager.FindByNameAsync(userName);
-            if (user == null)
-                throw new UnauthorizedAccessException("The authenticated user could not be found.");
-            return user;
-        }
+        //    var user = await _userManager.FindByIdAsync(userId);
+        //    if (user == null)
+        //        throw new UnauthorizedAccessException("The authenticated user could not be found.");
+        //    return user;
+        //}
     }
 }

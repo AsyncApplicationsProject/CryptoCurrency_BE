@@ -8,17 +8,17 @@ namespace CryptoCurrency.Services.Services
 {
     public abstract class BaseService
     {
-        protected readonly AppDbContext DbContext;
-        protected readonly IUserContextService UserContextService;
-        protected readonly UserManager<AppUser> UserManager;
-        protected readonly IMapper Mapper;
+        protected readonly AppDbContext _dbContext;
+        protected readonly UserManager<AppUser> _userManager;
+        protected readonly IMapper _mapper;
+        protected readonly IUserContextService _userContextService;
 
-        public BaseService(AppDbContext dbContext, IUserContextService userContextService, UserManager<AppUser> userManager, IMapper mapper)
+        public BaseService(AppDbContext dbContext, UserManager<AppUser> userManager, IMapper mapper, IUserContextService userContextService)
         {
-            DbContext = dbContext;
-            UserContextService = userContextService;
-            UserManager = userManager;
-            Mapper = mapper;
+            _dbContext = dbContext;
+            _userManager = userManager;
+            _mapper = mapper;
+            _userContextService = userContextService;
         }
     }
 }

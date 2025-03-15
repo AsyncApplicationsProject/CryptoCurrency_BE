@@ -22,12 +22,12 @@ namespace CryptoCurrency.Services.Services
 
         public JwtSecurityToken GenerateJwt(AppUser user)
         {
-            if (user == null || string.IsNullOrEmpty(user.UserName))
+            if (user == null || string.IsNullOrEmpty(user.Id))
                 throw new Exception("User is not valid");
 
             var authClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.UserName),
+                new Claim(ClaimTypes.Name, user.Id),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
 

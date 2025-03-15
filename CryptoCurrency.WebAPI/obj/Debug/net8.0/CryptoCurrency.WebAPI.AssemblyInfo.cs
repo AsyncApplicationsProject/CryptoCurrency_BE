@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoCurrency.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f076453fde5a6ee5ec98262fbda33bb716f1ea53")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+150356b3ca1937051ed0906f93338a8326c301cd")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoCurrency.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoCurrency.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,13 +12,16 @@ namespace CryptoCurrency.Services.Configuration
             // Register application services
             services.AddScoped<IJwtService, JwtService>();
             services.AddScoped<ICryptoService, CryptoService>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserContextService, UserContextService>();
+            services.AddScoped<IUserService, UserSerwice>();
 
             // Register AutoMapper profiles
             services.AddAutoMapper(
                 typeof(CryptoServiceProfile),
-                typeof(PriceHistoryServiceProfile)
+                typeof(PriceHistoryServiceProfile),
+                typeof(UserCryptoServiceProfile),
+                typeof(UserServiceProfile)
             );
         }
     }

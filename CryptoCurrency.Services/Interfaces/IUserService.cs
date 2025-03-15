@@ -1,11 +1,9 @@
-﻿using CryptoCurrency.Model.DTO.Auth;
-using Microsoft.AspNetCore.Identity;
+﻿using CryptoCurrency.Model.DTO;
 
 namespace CryptoCurrency.Services.Interfaces
 {
     public interface IUserService
     {
-        Task<IdentityResult> RegisterUserAsync(RegistrationModel model);
-        Task<string> LoginUserAsync(LoginModel model);
+        Task<UserDTO> GetUserData();
     }
 }

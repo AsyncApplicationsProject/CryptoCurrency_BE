@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using CryptoCurrency.DAL.Seed;
 using CryptoCurrency.Model.DTO.Auth;
 using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
@@ -7,18 +6,16 @@ using Microsoft.AspNetCore.Identity;
 
 namespace CryptoCurrency.Services.Services
 {
-    public class UserService : IUserService
+    public class AuthService : IAuthService
     {
         private readonly IJwtService JwtService;
         private readonly UserManager<AppUser> UserManager;
-        private readonly IUserContextService UserContextService;
         private readonly IMapper Mapper;
 
-        public UserService(IJwtService jwtService, UserManager<AppUser> userManager, IUserContextService userContextService, IMapper mapper)
+        public AuthService(IJwtService jwtService, UserManager<AppUser> userManager, IMapper mapper)
         {
             JwtService = jwtService;
             UserManager = userManager;
-            UserContextService = userContextService;
             Mapper = mapper;
         }
 

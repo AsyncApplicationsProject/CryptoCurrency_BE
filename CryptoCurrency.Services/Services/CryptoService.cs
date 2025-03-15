@@ -10,12 +10,12 @@ namespace CryptoCurrency.Services.Services
 {
     public class CryptoService : BaseService, ICryptoService
     {
-        public CryptoService(AppDbContext dbContext, IUserContextService userContextService, UserManager<AppUser> userManager, IMapper mapper) : base(dbContext, userContextService, userManager, mapper) { }
+        public CryptoService(AppDbContext dbContext, IUserContextService userContextService, UserManager<AppUser> userManager, IMapper mapper) : base(dbContext, userManager, mapper, userContextService) { }
 
         public async Task<List<CryptoDTO>> GetAllAsync()
         {
-            var cryptoList = await DbContext.Crypto.Include(c => c.PriceHistory).ToListAsync();
-            return cryptoList == null ? new List<CryptoDTO>() : Mapper.Map<List<CryptoDTO>>(cryptoList);
+            var cryptoList = await _dbContext.Crypto.Include(c => c.PriceHistory).ToListAsync();
+            return cryptoList == null ? new List<CryptoDTO>() : _mapper.Map<List<CryptoDTO>>(cryptoList);
         }
     }
 }

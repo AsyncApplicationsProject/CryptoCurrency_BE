@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CryptoCurrency.DAL.Seed;
+using CryptoCurrency.Model.DTO;
 using CryptoCurrency.Model.DTO.Auth;
 using CryptoCurrency.Model.Entities;
 
@@ -18,6 +19,8 @@ namespace CryptoCurrency.Services.AutoMapperProfiles
                 .ForMember(dest => dest.LastName, opt => opt.MapFrom(src => src.LastName))
                 .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
                 .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
+
+            CreateMap<AppUser, UserDTO>();
         }
     }
 }
