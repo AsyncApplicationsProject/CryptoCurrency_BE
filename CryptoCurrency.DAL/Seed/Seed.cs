@@ -130,9 +130,9 @@ namespace CryptoCurrency.DAL.Seed
             var priceHistory = new List<PriceHistory>();
             double currentPrice = startingPrice;
 
-            for (int i = 100; i >= 0; i--)
+            for (int i = 20; i >= 0; i--)
             {
-                double priceChange = currentPrice * (random.NextDouble() * 0.1 - 0.05);
+                double priceChange = currentPrice * (random.NextDouble() * 0.3 - 0.1);
                 currentPrice = Math.Round(currentPrice + priceChange, 2);
 
                 priceHistory.Add(new PriceHistory
@@ -168,7 +168,7 @@ namespace CryptoCurrency.DAL.Seed
 
         public static decimal GenerateBalance()
         {
-            return Math.Round((decimal)(random.NextDouble() * 10000), 2);
+            return Math.Round((decimal)(random.NextDouble() * 100000), 2);
         }
     }
 }
