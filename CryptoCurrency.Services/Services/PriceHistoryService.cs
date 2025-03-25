@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using CryptoCurrency.DAL.EF;
 using CryptoCurrency.Model.DTO;
-using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace CryptoCurrency.Services.Services

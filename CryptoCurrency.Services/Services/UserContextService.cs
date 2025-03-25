@@ -20,30 +20,5 @@ namespace CryptoCurrency.Services.Services
         {
             return _httpContextAccessor.HttpContext?.User?.Identity?.Name;
         }
-
-        //public async Task<AppUser?> GetAppUser(string? email, string? userName)
-        //{
-        //    if (!string.IsNullOrWhiteSpace(email))
-        //    {
-        //        return await _userManager.FindByEmailAsync(email);
-        //    }
-        //    else if (!string.IsNullOrWhiteSpace(userName))
-        //    {
-        //        return await _userManager.FindByNameAsync(userName);
-        //    }
-        //    return null;
-        //}
-
-        //public async Task<AppUser> GetAppUser()
-        //{
-        //    var userId = GetUserId();
-        //    if (userId == null)
-        //        throw new UnauthorizedAccessException("The user is not authenticated.");
-
-        //    var user = await _userManager.FindByIdAsync(userId);
-        //    if (user == null)
-        //        throw new UnauthorizedAccessException("The authenticated user could not be found.");
-        //    return user;
-        //}
     }
 }

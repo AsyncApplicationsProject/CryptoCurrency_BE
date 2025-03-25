@@ -76,5 +76,18 @@ namespace CryptoCurrency.Services.Services
                 return null;
             }
         }
+
+        public string? GetUserIdFromToken(string token)
+        {
+            var principal = ValidateJwt(token);
+            if (principal == null)
+            {
+                return null;
+            }
+
+            var userId = principal.FindFirst(ClaimTypes.Name)?.Value;
+            return userId;
+        }
+
     }
 }

@@ -1,11 +1,9 @@
 using CryptoCurrency.DAL.EF;
 using CryptoCurrency.DAL.Seed;
 using CryptoCurrency.Model.Entities;
-using CryptoCurrency.WebAPI.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.IdentityModel.Tokens.Jwt;

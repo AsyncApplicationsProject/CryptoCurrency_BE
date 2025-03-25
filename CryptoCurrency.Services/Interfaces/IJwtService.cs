@@ -9,5 +9,6 @@ namespace CryptoCurrency.Services.Interfaces
         public JwtSecurityToken GenerateJwt(AppUser user);
         public string WriteToken(JwtSecurityToken token);
         public ClaimsPrincipal? ValidateJwt(string token);
+        public string? GetUserIdFromToken(string token);
     }
 }
