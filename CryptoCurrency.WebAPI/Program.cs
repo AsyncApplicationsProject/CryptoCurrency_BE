@@ -83,6 +83,10 @@ public class Program
             options.SaveToken = true;
             options.TokenValidationParameters = new TokenValidationParameters
             {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
                 ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
                 ValidAudience = builder.Configuration["JWT:ValidAudience"],
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret)),
@@ -91,8 +95,21 @@ public class Program
             };
             options.Events = new JwtBearerEvents
             {
+                OnMessageReceived = context =>
+                {
+                    var accessToken = context.Request.Query["access_token"];
+
+                    // Jeœli ¿¹danie jest dla WebSocket (SignalR) i zawiera token, przypisz go do kontekstu
+                    if (!string.IsNullOrEmpty(accessToken) &&
+                        context.HttpContext.WebSockets.IsWebSocketRequest)
+                    {
+                        context.Token = accessToken;
+                    }
+                    return Task.CompletedTask;
+                },
                 OnChallenge = ctx => LogAttempt(ctx.Request.Headers, "OnChallenge"),
-                OnTokenValidated = ctx => LogAttempt(ctx.Request.Headers, "OnTokenValidated")
+                OnTokenValidated = ctx => LogAttempt(ctx.Request.Headers, "OnTokenValidated"),
+                OnAuthenticationFailed = ctx => LogAttempt(ctx.Request.Headers, "OnAuthenticationFailed"),
             };
         });
 
@@ -100,20 +117,22 @@ public class Program
 
         builder.Services.AddCors(opt =>
         {
-            opt.AddPolicy("AllowAllOrigins", builder =>
+            opt.AddPolicy("AllowSpecificOrigin", builder =>
             {
-                builder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader();
+                builder.WithOrigins("http://localhost:4200")  // Ustawienie frontendowego adresu
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();  // Zezwala na dane uwierzytelniaj¹ce (ciasteczka, tokeny)
             });
         });
 
-        // added SignalR
+        // Dodanie SignalR
         builder.Services.AddSignalR();
 
         var app = builder.Build();
 
-        app.UseCors("AllowAllOrigins");
+        // U¿ywanie nowej polityki CORS
+        app.UseCors("AllowSpecificOrigin");
 
         // Seed Data configuration
         using (var scope = app.Services.CreateScope())
@@ -136,17 +155,22 @@ public class Program
 
         app.MapControllers();
 
+        // Mapowanie endpointów SignalR
+        app.UseWebSockets();
+        app.MapHub<TradeHub>("/tradeHub");
+        app.MapHub<TradeHub>("/priceHistoryHub");
+
         app.Run();
 
         Task LogAttempt(IHeaderDictionary headers, string eventType)
         {
-            // var logger = loggerFactory.CreateLogger<Program>();
-
+            var loggerFactory = LoggerFactory.Create(builder => { });
+            var logger = loggerFactory.CreateLogger<Program>();
             var authorizationHeader = headers["Authorization"].FirstOrDefault();
 
             if (authorizationHeader is null)
             {
-                // logger.LogInformation($"{eventType}. JWT not present");
+                 logger.LogInformation($"{eventType}. JWT not present");
             }
             else
             {
@@ -154,7 +178,7 @@ public class Program
 
                 var jwt = new JwtSecurityToken(jwtString);
 
-                // logger.LogInformation($"{eventType}. Expiration: {jwt.ValidTo.ToLongTimeString()}. System time: {DateTime.UtcNow.ToLongTimeString()}");
+                 logger.LogInformation($"{eventType}. Expiration: {jwt.ValidTo.ToLongTimeString()}. System time: {DateTime.UtcNow.ToLongTimeString()}");
             }
             return Task.CompletedTask;
         }

@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "1AEt4be9cQt54DUzgIpvb2XgfOA+7WfPyzMSPInai78=",
+  "Hash": "vJU5cvavt0i8LlQ4+aDURm6LLxbq0FtR2f5yJnr1MwM=",
   "Source": "CryptoCurrency.WebAPI",
   "BasePath": "_content/CryptoCurrency.WebAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

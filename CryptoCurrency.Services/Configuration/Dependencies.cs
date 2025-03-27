@@ -16,11 +16,13 @@ namespace CryptoCurrency.Services.Configuration
             services.AddScoped<IUserContextService, UserContextService>();
             services.AddScoped<IUserService, UserSerwice>();
             services.AddScoped<IPriceHistoryService, PriceHistoryService>();
+            services.AddScoped<ITradeService, TradeService>();
 
             // Register AutoMapper profiles
             services.AddAutoMapper(
                 typeof(CryptoServiceProfile),
                 typeof(PriceHistoryServiceProfile),
+                typeof(TradeService),
                 typeof(UserCryptoServiceProfile),
                 typeof(UserServiceProfile)
             );

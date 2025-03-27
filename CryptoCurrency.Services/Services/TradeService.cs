@@ -1,40 +1,40 @@
-﻿using CryptoCurrency.DAL.EF;
+﻿using AutoMapper;
+using CryptoCurrency.DAL.EF;
 using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
+using CryptoCurrency.Services.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CryptoCurrency.Services.Services
+public class TradeService : BaseService, ITradeService
 {
-    public class TradeService : ITradeService
+    protected readonly IJwtService _jwtService;
+
+    public TradeService(AppDbContext dbContext, UserManager<AppUser> userManager, IMapper mapper, IUserContextService userContextService, IJwtService jwtService)
+        : base(dbContext, userManager, mapper, userContextService)
     {
-        protected readonly AppDbContext _dbContext;
-        protected readonly IJwtService _jwtService;
+        _jwtService = jwtService;
+    }
 
-        public TradeService(AppDbContext dbContext, IJwtService jwtService)
+    public async Task<TradeResult> Buy(string symbol, int amount, string userId)
+    {
+        if (userId == null)
+            return TradeResult.Failure("Client is not authenticated.");
+        if (amount <= 0)
+            return TradeResult.Failure("Invalid amount.");
+
+        var crypto = await _dbContext.Crypto.FirstOrDefaultAsync(c => c.Symbol == symbol);
+        if (crypto == null)
+            return TradeResult.Failure("Invalid crypto symbol.");
+
+        var user = await _dbContext.AppUsers.Include(u => u.Wallet).FirstOrDefaultAsync(u => u.Id == userId);
+        if (user == null)
+            return TradeResult.Failure("User not found.");
+
+        using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
+        try
         {
-            _dbContext = dbContext;
-            _jwtService = jwtService;
-        }
-
-        public async Task<bool> Buy(string symbol, int amount, string token)
-        {
-            var userId = _jwtService.GetUserIdFromToken(token);
-            if (string.IsNullOrEmpty(token) || userId == null)
-                return false;
-
-            if (amount <= 0)
-                return false;
-
-            var crypto = _dbContext.Crypto.FirstOrDefault(c => c.Symbol == symbol);
-            if (crypto == null)
-                return false;
-
-            var user = await _dbContext.AppUsers.Include(u => u.Wallet)
-                                              .FirstOrDefaultAsync(u => u.Id == userId);
-            if (user == null)
-                return false;
-
-
             var walletItem = user.Wallet.FirstOrDefault(w => w.CryptoSymbol == symbol);
             if (walletItem != null)
             {
@@ -45,28 +45,59 @@ namespace CryptoCurrency.Services.Services
                 user.Wallet.Add(new UserCrypto
                 {
                     AppUserId = userId,
-                    AppUser = user,
                     CryptoSymbol = symbol,
                     Crypto = crypto,
                     Amount = amount
                 });
             }
 
-            try
-            {
-                await _dbContext.SaveChangesAsync();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return false;
-            }
+            await _dbContext.SaveChangesAsync();
+            await transaction.CommitAsync();
+            return TradeResult.Success();
         }
-
-        public Task<bool> Sell(string symbol, int amount, string token)
+        catch (Exception ex)
         {
-            throw new NotImplementedException();
+            await transaction.RollbackAsync();
+            return TradeResult.Failure($"Error while saving changes: {ex.Message}");
+        }
+    }
+
+    public async Task<TradeResult> Sell(string symbol, int amount, string userId)
+    {
+        if (userId == null)
+            return TradeResult.Failure("Client is not authenticated.");
+        if (amount <= 0)
+            return TradeResult.Failure("Invalid amount.");
+
+        var crypto = await _dbContext.Crypto.FirstOrDefaultAsync(c => c.Symbol == symbol);
+        if (crypto == null)
+            return TradeResult.Failure("Invalid crypto symbol.");
+
+        var user = await _dbContext.AppUsers.Include(u => u.Wallet).FirstOrDefaultAsync(u => u.Id == userId);
+        if (user == null)
+            return TradeResult.Failure("User not found.");
+
+        using var transaction = await _dbContext.Database.BeginTransactionAsync();
+
+        try
+        {
+            var walletItem = user.Wallet.FirstOrDefault(w => w.CryptoSymbol == symbol);
+            if (walletItem == null || walletItem.Amount < amount)
+                return TradeResult.Failure("Insufficient funds.");
+
+            walletItem.Amount -= amount;
+
+            if (walletItem.Amount == 0)
+                _dbContext.UserCryptos.Remove(walletItem);
+
+            await _dbContext.SaveChangesAsync();
+            await transaction.CommitAsync();
+            return TradeResult.Success();
+        }
+        catch (Exception ex)
+        {
+            await transaction.RollbackAsync();
+            return TradeResult.Failure($"Error while saving changes: {ex.Message}");
         }
     }
 }

@@ -3,6 +3,7 @@ using CryptoCurrency.DAL.EF;
 using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 
 namespace CryptoCurrency.Services.Services
 {

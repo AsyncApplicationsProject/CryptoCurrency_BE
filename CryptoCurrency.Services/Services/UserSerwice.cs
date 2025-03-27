@@ -5,6 +5,7 @@ using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace CryptoCurrency.Services.Services
 {
