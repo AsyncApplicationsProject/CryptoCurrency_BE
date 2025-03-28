@@ -37,7 +37,7 @@ public class TradeHub : Hub
             return;
         }
         var result = await _tradeService.Buy(symbol, amount, userId);
-        await Clients.Caller.SendAsync("TradeResponse", result.Message);
+        await Clients.Caller.SendAsync("TradeResponse", result);
     }
 
     public async Task Sell(string symbol, int amount)
@@ -49,6 +49,6 @@ public class TradeHub : Hub
             return;
         }
         var result = await _tradeService.Sell(symbol, amount, userId);
-        await Clients.Caller.SendAsync("TradeResponse", result.Message);
+        await Clients.Caller.SendAsync("TradeResponse", result);
     }
 }

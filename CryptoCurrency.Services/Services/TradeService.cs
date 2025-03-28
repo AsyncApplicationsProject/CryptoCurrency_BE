@@ -23,7 +23,7 @@ public class TradeService : BaseService, ITradeService
         if (amount <= 0)
             return TradeResult.Failure("Invalid amount.");
 
-        var crypto = await _dbContext.Crypto.FirstOrDefaultAsync(c => c.Symbol == symbol);
+        var crypto = await _dbContext.Crypto.Include(c => c.PriceHistory).FirstOrDefaultAsync(c => c.Symbol == symbol);
         if (crypto == null)
             return TradeResult.Failure("Invalid crypto symbol.");
 
@@ -51,9 +51,14 @@ public class TradeService : BaseService, ITradeService
                 });
             }
 
+            var lastPrice = crypto.PriceHistory.LastOrDefault()?.Price ?? 0;
+            if (lastPrice == 0)
+                return TradeResult.Failure("Price data not available for the selected crypto.");
+            user.Balance -= amount * lastPrice;
+
             await _dbContext.SaveChangesAsync();
             await transaction.CommitAsync();
-            return TradeResult.Success();
+            return TradeResult.Success(user.Balance);
         }
         catch (Exception ex)
         {
@@ -69,7 +74,7 @@ public class TradeService : BaseService, ITradeService
         if (amount <= 0)
             return TradeResult.Failure("Invalid amount.");
 
-        var crypto = await _dbContext.Crypto.FirstOrDefaultAsync(c => c.Symbol == symbol);
+        var crypto = await _dbContext.Crypto.Include(c => c.PriceHistory).FirstOrDefaultAsync(c => c.Symbol == symbol);
         if (crypto == null)
             return TradeResult.Failure("Invalid crypto symbol.");
 
@@ -85,6 +90,11 @@ public class TradeService : BaseService, ITradeService
             if (walletItem == null || walletItem.Amount < amount)
                 return TradeResult.Failure("Insufficient funds.");
 
+            var lastPrice = crypto.PriceHistory.LastOrDefault()?.Price ?? 0;
+            if (lastPrice == 0)
+                return TradeResult.Failure("Price data not available for the selected crypto.");
+            user.Balance += amount * lastPrice;
+
             walletItem.Amount -= amount;
 
             if (walletItem.Amount == 0)
@@ -92,7 +102,7 @@ public class TradeService : BaseService, ITradeService
 
             await _dbContext.SaveChangesAsync();
             await transaction.CommitAsync();
-            return TradeResult.Success();
+            return TradeResult.Success(user.Balance);
         }
         catch (Exception ex)
         {

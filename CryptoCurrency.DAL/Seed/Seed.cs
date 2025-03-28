@@ -125,14 +125,14 @@ namespace CryptoCurrency.DAL.Seed
             return cryptos;
         }
 
-        private static List<PriceHistory> GeneratePriceHistory(string cryptoSymbol, double startingPrice)
+        private static List<PriceHistory> GeneratePriceHistory(string cryptoSymbol, decimal startingPrice)
         {
             var priceHistory = new List<PriceHistory>();
-            double currentPrice = startingPrice;
+            decimal currentPrice = startingPrice;
 
             for (int i = 20; i >= 0; i--)
             {
-                double priceChange = currentPrice * (random.NextDouble() * 0.3 - 0.1);
+                decimal priceChange = currentPrice * (decimal)(random.NextDouble() * 0.3 - 0.1);
                 currentPrice = Math.Round(currentPrice + priceChange, 2);
 
                 priceHistory.Add(new PriceHistory
