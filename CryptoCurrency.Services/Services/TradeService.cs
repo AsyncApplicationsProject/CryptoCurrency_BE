@@ -58,7 +58,7 @@ public class TradeService : BaseService, ITradeService
 
             await _dbContext.SaveChangesAsync();
             await transaction.CommitAsync();
-            return TradeResult.Success(user.Balance);
+            return TradeResult.Success(user.Balance, crypto.Symbol, user.Wallet.FirstOrDefault(w => w.CryptoSymbol == symbol)!.Amount);
         }
         catch (Exception ex)
         {
@@ -97,12 +97,12 @@ public class TradeService : BaseService, ITradeService
 
             walletItem.Amount -= amount;
 
-            if (walletItem.Amount == 0)
+            if (walletItem.Amount <= 0)
                 _dbContext.UserCryptos.Remove(walletItem);
 
             await _dbContext.SaveChangesAsync();
             await transaction.CommitAsync();
-            return TradeResult.Success(user.Balance);
+            return TradeResult.Success(user.Balance, crypto.Symbol, walletItem.Amount);
         }
         catch (Exception ex)
         {

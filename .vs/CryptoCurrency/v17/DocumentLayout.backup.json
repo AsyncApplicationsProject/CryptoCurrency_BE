@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\dto\\traderesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\dto\\traderesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7E1D0945-8A97-4B98-9B40-C72535A7E72B}|CryptoCurrency.Services\\CryptoCurrency.Services.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.services\\services\\tradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E1D0945-8A97-4B98-9B40-C72535A7E72B}|CryptoCurrency.Services\\CryptoCurrency.Services.csproj|solutionrelative:cryptocurrency.services\\services\\tradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\traderesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\traderesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\pricehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\pricehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\usercrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\usercrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\pricehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\pricehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E1D0945-8A97-4B98-9B40-C72535A7E72B}|CryptoCurrency.Services\\CryptoCurrency.Services.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.services\\interfaces\\itradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E1D0945-8A97-4B98-9B40-C72535A7E72B}|CryptoCurrency.Services\\CryptoCurrency.Services.csproj|solutionrelative:cryptocurrency.services\\interfaces\\itradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|c:\\users\\janik\\documents\\studia\\semestr viii\\asynchroniczne interfejsy www\\laboratorium\\projekt\\be\\cryptocurrency.model\\entities\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61751BE1-7D3F-4564-ADC2-AC74CAD5879D}|CryptoCurrency.Model\\CryptoCurrency.Model.csproj|solutionrelative:cryptocurrency.model\\entities\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +34,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserCrypto.cs",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\UserCrypto.cs",
+              "RelativeDocumentMoniker": "CryptoCurrency.Model\\Entities\\UserCrypto.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\UserCrypto.cs",
+              "RelativeToolTip": "CryptoCurrency.Model\\Entities\\UserCrypto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T18:03:08.811Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -44,14 +57,14 @@
               "RelativeDocumentMoniker": "CryptoCurrency.Model\\Entities\\AppUser.cs",
               "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\AppUser.cs",
               "RelativeToolTip": "CryptoCurrency.Model\\Entities\\AppUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T17:25:13.059Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Crypto.cs",
               "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\Crypto.cs",
               "RelativeDocumentMoniker": "CryptoCurrency.Model\\Entities\\Crypto.cs",
@@ -59,12 +72,11 @@
               "RelativeToolTip": "CryptoCurrency.Model\\Entities\\Crypto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T17:25:11.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T17:25:11.879Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "PriceHistory.cs",
               "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\PriceHistory.cs",
               "RelativeDocumentMoniker": "CryptoCurrency.Model\\Entities\\PriceHistory.cs",
@@ -72,44 +84,30 @@
               "RelativeToolTip": "CryptoCurrency.Model\\Entities\\PriceHistory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T17:22:12.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T17:22:12.18Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TradeService.cs",
               "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Services\\Services\\TradeService.cs",
               "RelativeDocumentMoniker": "CryptoCurrency.Services\\Services\\TradeService.cs",
               "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Services\\Services\\TradeService.cs",
               "RelativeToolTip": "CryptoCurrency.Services\\Services\\TradeService.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAqwF8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAawGgAAACFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T17:21:09.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ITradeService.cs",
-              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Services\\Interfaces\\ITradeService.cs",
-              "RelativeDocumentMoniker": "CryptoCurrency.Services\\Interfaces\\ITradeService.cs",
-              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Services\\Interfaces\\ITradeService.cs",
-              "RelativeToolTip": "CryptoCurrency.Services\\Interfaces\\ITradeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T17:21:03.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TradeResult.cs",
-              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\TradeResult.cs",
-              "RelativeDocumentMoniker": "CryptoCurrency.Model\\Entities\\TradeResult.cs",
-              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\Entities\\TradeResult.cs",
-              "RelativeToolTip": "CryptoCurrency.Model\\Entities\\TradeResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\DTO\\TradeResult.cs",
+              "RelativeDocumentMoniker": "CryptoCurrency.Model\\DTO\\TradeResult.cs",
+              "ToolTip": "C:\\Users\\janik\\Documents\\Studia\\Semestr VIII\\Asynchroniczne interfejsy www\\Laboratorium\\Projekt\\BE\\CryptoCurrency.Model\\DTO\\TradeResult.cs",
+              "RelativeToolTip": "CryptoCurrency.Model\\DTO\\TradeResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T17:20:51.587Z",
               "EditorCaption": ""
