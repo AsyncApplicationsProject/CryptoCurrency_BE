@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoCurrency.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe214285738429e76081ccd115e8a5136e38909a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41f57672ed9ddd94f80d1e17b83ccf429105b541")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoCurrency.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoCurrency.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

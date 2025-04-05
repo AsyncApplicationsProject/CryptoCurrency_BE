@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCurrency.DAL", "Crypt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCurrency.Services", "CryptoCurrency.Services\CryptoCurrency.Services.csproj", "{7E1D0945-8A97-4B98-9B40-C72535A7E72B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCurrency.WebHUB", "CryptoCurrency.WebHUB\CryptoCurrency.WebHUB.csproj", "{CDE3C554-1B19-4F1B-BE2A-D6247B2F519B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7E1D0945-8A97-4B98-9B40-C72535A7E72B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E1D0945-8A97-4B98-9B40-C72535A7E72B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E1D0945-8A97-4B98-9B40-C72535A7E72B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE3C554-1B19-4F1B-BE2A-D6247B2F519B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE3C554-1B19-4F1B-BE2A-D6247B2F519B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE3C554-1B19-4F1B-BE2A-D6247B2F519B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE3C554-1B19-4F1B-BE2A-D6247B2F519B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

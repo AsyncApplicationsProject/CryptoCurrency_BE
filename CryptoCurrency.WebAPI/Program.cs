@@ -1,6 +1,7 @@
 using CryptoCurrency.DAL.EF;
 using CryptoCurrency.DAL.Seed;
 using CryptoCurrency.Model.Entities;
+using CryptoCurrency.WebAPI.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -158,7 +159,7 @@ public class Program
         // Mapowanie endpointów SignalR
         app.UseWebSockets();
         app.MapHub<TradeHub>("/tradeHub");
-        app.MapHub<TradeHub>("/priceHistoryHub");
+        app.MapHub<PriceHistoryHub>("/priceHistoryHub");
 
         app.Run();
 

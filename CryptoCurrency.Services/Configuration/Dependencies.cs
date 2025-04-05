@@ -18,6 +18,8 @@ namespace CryptoCurrency.Services.Configuration
             services.AddScoped<IPriceHistoryService, PriceHistoryService>();
             services.AddScoped<ITradeService, TradeService>();
 
+            services.AddHostedService<HostedService>();
+
             // Register AutoMapper profiles
             services.AddAutoMapper(
                 typeof(CryptoServiceProfile),

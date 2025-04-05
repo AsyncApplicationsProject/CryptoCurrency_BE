@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CryptoCurrency.DAL.EF;
 using CryptoCurrency.Model.DTO;
+using CryptoCurrency.Model.Entities;
 using CryptoCurrency.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,21 +20,24 @@ namespace CryptoCurrency.Services.Services
             _random = new Random();
         }
 
-        public async Task<CryptoDTO> GeneratePriceHistory()
+        public async Task<CryptoPriceDTO> GeneratePriceHistory()
         {
-            var cryptos = await _dbContext.Crypto.ToListAsync();
+            var cryptos = await _dbContext.Crypto.Include(c => c.PriceHistory).ToListAsync();
             var item = _random.Next(cryptos.Count);
 
-            PriceHistoryDTO newPriceHistoryDTO = new PriceHistoryDTO();
-            newPriceHistoryDTO.Date = DateTime.UtcNow;
-            newPriceHistoryDTO.Price = _random.Next(5000, 60000);
+            PriceHistory newPriceHistory = new PriceHistory();
+            newPriceHistory.Date = DateTime.Now;
+            newPriceHistory.Price = _random.Next(20000, 60000);
+            newPriceHistory.CryptoSymbol = cryptos[item].Symbol;
+            newPriceHistory.Crypto = cryptos[item];
 
-            cryptos[item].PriceHistory.Clear();
+            cryptos[item].PriceHistory.Add(newPriceHistory);
 
-            CryptoDTO cryptoDTO = _mapper.Map<CryptoDTO>(cryptos[item]);
-            cryptoDTO.PriceHistory.Add(newPriceHistoryDTO);
+            await _dbContext.SaveChangesAsync();
 
-            return cryptoDTO;
+            CryptoPriceDTO DTO = _mapper.Map<CryptoPriceDTO>(cryptos[item]);
+
+            return DTO;
         }
     }
 }

@@ -4,6 +4,6 @@ namespace CryptoCurrency.Services.Interfaces
 {
     public interface IPriceHistoryService
     {
-        Task<CryptoDTO> GeneratePriceHistory();
+        Task<CryptoPriceDTO> GeneratePriceHistory();
     }
 }
