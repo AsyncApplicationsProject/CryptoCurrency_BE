@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CryptoCurrency.DAL\CryptoCurrency.DAL.csproj" />
     <ProjectReference Include="..\CryptoCurrency.Model\CryptoCurrency.Model.csproj" />
     <ProjectReference Include="..\CryptoCurrency.Services\CryptoCurrency.Services.csproj" />
   </ItemGroup>

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "cplgnYozCPklunZqFkyCCt2ROI4MsBIlxWJWJ00KUwI=",
+  "Source": "CryptoCurrency.WebHostedService",
+  "BasePath": "_content/CryptoCurrency.WebHostedService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

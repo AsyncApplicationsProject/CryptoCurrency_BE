@@ -15,10 +15,8 @@ namespace CryptoCurrency.Services.Configuration
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserContextService, UserContextService>();
             services.AddScoped<IUserService, UserSerwice>();
-            services.AddScoped<IPriceHistoryService, PriceHistoryService>();
             services.AddScoped<ITradeService, TradeService>();
-
-            services.AddHostedService<HostedService>();
+            //services.AddScoped<IPriceHistoryService, PriceHistoryService>();
 
             // Register AutoMapper profiles
             services.AddAutoMapper(

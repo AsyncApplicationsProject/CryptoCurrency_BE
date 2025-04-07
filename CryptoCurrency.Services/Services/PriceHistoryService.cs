@@ -9,8 +9,8 @@ namespace CryptoCurrency.Services.Services
 {
     public class PriceHistoryService : IPriceHistoryService
     {
-        protected readonly AppDbContext _dbContext;
-        protected readonly IMapper _mapper;
+        private readonly AppDbContext _dbContext;
+        private readonly IMapper _mapper;
         private Random _random;
 
         public PriceHistoryService(AppDbContext dbContext, IMapper mapper) 
